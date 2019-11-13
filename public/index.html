@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="./base.css">
+		<link rel="stylesheet" href="./index.css">
+	</head>
+	<body>
+		<section class="todoapp">
+			<todos-header  @add="add"></todos-header>
+			<todos-main :list="showList" @del="del" @edit="edit" @check-all="checkAll" @change="change"></todos-main>
+			<todos-footer :list="list" v-show="isShow" @clear="clear">
+				<template v-slot:count>还剩</template>
+				<template v-slot:clear>清空</template>
+			</todos-footer>
+		</section>
+		<!-- Scripts here. Don't remove ↓ -->
+		<script src="./vue.js"></script>
+		<script src="./vue-router.js"></script>
+		<script src="./base.js"></script>
+		<script src="./component/header.js"></script>
+		<script src="./component/main.js"></script>
+		<script src="./component/footer.js"></script>
+		<script src="./app.js"></script>
+	</body>
+</html>
